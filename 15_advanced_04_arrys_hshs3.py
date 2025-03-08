@@ -95,7 +95,7 @@ for name in items:
 
 # IMPORTANT
 # for name items: Grabs each key ("chair", then "book") directly from the dictionary. 
-# In Python, looping over a dictionary gives you its keys.
+# ****** In Python, looping over a dictionary gives you its keys. ******
 
 
 
@@ -149,16 +149,35 @@ for id in persons:
 # 6. Convert an array of strings into a hash with keys for each string in the array and values for the number of times the string appears in the array.
 #    For example, ["do", "or", "do", "not"] becomes {"do" => 2, "or" => 1, "not" => 1}.
 
-strings = ["do", "or", "do", "not"]
+words = ["do", "or", "do", "not"]
 #         {"do" => 2, "or" => 1, "not" => 1}
-# strings_hash =
+result = {}
 
+i = 0
+while i < len(words):
+    key = words[i]
+    if key not in result:
+        result[key] = 0
+    result[key] += 1
+    i += 1
 
-# p strings_hash
-
+# print(result)
 
 
 # Solution
+# words = ["do", "or", "do", "not"]         # List of words to count
+# #         {"do" => 2, "or" => 1, "not" => 1}
+# result = {}                               # Empty dictionary to store word counts
+
+# i = 0                                     # Index to track position in list
+# while i < len(words):                     # Loop through all words in the list
+#     key = words[i]                        # Get the current word
+#     if key not in result:                 # If word isn’t in dictionary yet
+#         result[key] = 0                   # Start its count at 0
+#     result[key] += 1                      # Add 1 to the word’s count
+#     i += 1                                # Move to the next word
+
+# print(result)                             # Print the final word counts
 
 
 
@@ -167,16 +186,17 @@ strings = ["do", "or", "do", "not"]
 
 hash = { "a": 1, "b": 2, "c": 3, "d": 4 }
 #      ["a", 1, "b", 2, "c", 3, "d", 4]
-# flattened_array =
+result = []
 
+for key in hash:
+    result.append(key)
+    result.append(hash[key])
 
-# p flattened_array
-
+# print(result)
 
 
 
 # Solution
-
 
 
 
@@ -186,17 +206,23 @@ hash = { "a": 1, "b": 2, "c": 3, "d": 4 }
 price_hash = { "chair": 75, "book": 15 }
 items = [{ "name": "chair", "color": "red", "weight": 10 }, { "name": "book", "color": "black", "weight": 1 }]
 #        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
-# combined_hash =
+result = {}
 
+i = 0
+while i < len(items):
+    item = items[i]
+    name = item["name"]
+    color = item["color"]
+    weight = item["weight"]
+    price = price_hash[name]
+    result[name] = {"price": price, "color": color, "weight": weight}
+    i += 1
 
-# p combined_hash
-
-
+# print(result)
 
 
 
 # Solution
-
 
 
 
@@ -206,18 +232,23 @@ items = [{ "name": "chair", "color": "red", "weight": 10 }, { "name": "book", "c
 
 books = [{ "author": "Jeff Smith", "title": "Bone" }, { "author": "George Orwell", "title": "1984" }, { "author": "Jeff Smith", "title": "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
-# books_hash =
+result = {}
 
+i = 0
+while i < len(books):
+    book = books[i]
+    author = book["author"]
+    title = book["title"]
+    if author not in result:
+        result[author] = []
+    result[author].append(title)
+    i += 1
 
-# p books_hash
-
-
+# print(result)
 
 
 
 # Solution
-
-
 
 
 
@@ -226,15 +257,19 @@ books = [{ "author": "Jeff Smith", "title": "Bone" }, { "author": "George Orwell
 
 original_hash = { "a": 1, "b": 2, "c": 3 }
 #               {1 => "a", 2 => "b", 3 => "c"}
-# flipped_hash =
+result = {}
 
-# p flipped_hash
-
-
-
-
+for key in original_hash:
+    result[original_hash[key]] = key
+# print(result)
 
 
 # Solution
+# original_hash = { "a": 1, "b": 2, "c": 3 }
+# result = {}
 
+# for key in original_hash:
+#   value = original_hash[key]
+#   result[value] = key
+# print(result)
 
