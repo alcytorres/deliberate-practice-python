@@ -313,3 +313,18 @@ for key in hash:
 #   result[value] = key
 # print(result)
 
+
+
+
+# Quick Decision Rule:
+
+# Collection-Driven (Hash/List Keys) → for loop: “Iterate over items/keys directly.”
+        # Pattern: for item in collection or for key in hash.
+        
+        # Key Insight: Use for when the problem says “for each [item/key] in [collection], do something” (e.g., “for each key, add it to the result”).
+
+
+# Position-Driven (List Indices) → while loop: “Iterate using an index.”
+        # Pattern: while i < len(sequence) with sequence[i].
+
+        # Key Insight: Use while when the problem involves “stepping through a list” or “processing items at specific positions” (e.g., “for each position i, use the item at i”).
