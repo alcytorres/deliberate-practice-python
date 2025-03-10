@@ -286,7 +286,7 @@ while i < len(books):
 # 10. Given a hash, create a new hash that has the keys and values switched.
 #     For example, {"a" => 1, "b" => 2, "c" => 3} becomes {1 => "a", 2 => "b", 3 => "c"}.
 
-original_hash = { "a": 1, "b": 2, "c": 3 }
+hash = { "a": 1, "b": 2, "c": 3 }
 #               {1 => "a", 2 => "b", 3 => "c"}
 result = {}
 
@@ -295,21 +295,21 @@ result = {}
 
 
 # Solution
-original_hash = { "a": 1, "b": 2, "c": 3 }
+hash = { "a": 1, "b": 2, "c": 3 }
 #               {1 => "a", 2 => "b", 3 => "c"}
 result = {}
 
-for key in original_hash:
-    result[original_hash[key]] = key
+for key in hash:
+    result[hash[key]] = key
 # print(result)
 
 
 # Solution
-# original_hash = { "a": 1, "b": 2, "c": 3 }
+# hash = { "a": 1, "b": 2, "c": 3 }
 # result = {}
 
-# for key in original_hash:
-#   value = original_hash[key]
+# for key in hash:
+#   value = hash[key]
 #   result[value] = key
 # print(result)
 
