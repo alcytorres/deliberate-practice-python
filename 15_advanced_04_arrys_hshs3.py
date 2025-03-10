@@ -261,7 +261,7 @@ result = {}
 
 for key in original_hash:
     result[original_hash[key]] = key
-# print(result)
+print(result)
 
 
 # Solution
