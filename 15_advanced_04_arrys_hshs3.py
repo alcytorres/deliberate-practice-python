@@ -36,6 +36,7 @@ items = [{ "id": 1, "color": "blue", "price": 32 }, { "id": 2, "color": "red", "
 result = {}
 
 
+
 # print(result)
 
 
@@ -65,16 +66,6 @@ word = "bookkeeper"
 #      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
 result = {}
 
-
-
-# print(result)
-
-
-# Solution 
-word = "bookkeeper"
-#      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
-result = {}
-
 i = 0
 while i < len(word):
     letter = word[i]
@@ -84,6 +75,22 @@ while i < len(word):
     i += 1
 
 # print(result)
+
+
+# Solution 
+word = "bookkeeper"    # Input string to process
+#      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
+result = {}            # Empty dictionary to store letter counts
+
+i = 0                   # Initialize index to 0 to start at the first character
+while i < len(word):    # Loop until i reaches the length of "bookkeeper" (10)
+    letter = word[i]    # Get the character at position i (e.g., "b" when i=0)
+    if letter not in result:  # If letter isn’t in the dictionary yet
+        result[letter] = 0    # Initialize its count to 0
+    result[letter] += 1       # Increment the count for this letter
+    i += 1                    # Move to the next index
+
+# print(result)  # Output the final dictionary with letter counts
 
 
 
@@ -141,7 +148,10 @@ persons = { 321: { "name": "Alice", "age": 31 }, 322: { "name": "Maria", "age": 
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
 result = []
 
-
+for id in persons:
+    person = persons[id]
+    person["id"] = id
+    result.append(person)
     
 # print(result)
 
@@ -161,7 +171,7 @@ for id in persons:             # Loop over each key (ID) in the dictionary
     person["id"] = id          # Add the "id" key with the original key’s value
     result.append(person)      # Add the updated dictionary to the result list
 
-# print(result)                  # Print the final list of dictionaries
+# print(result)                 # Print the final list of dictionaries
 
 
 
@@ -171,6 +181,7 @@ for id in persons:             # Loop over each key (ID) in the dictionary
 words = ["do", "or", "do", "not"]
 #       {"do" => 2, "or" => 1, "not" => 1}
 result = {}
+
 
 
 # print(result)
@@ -227,6 +238,7 @@ items = [{ "name": "chair", "color": "red", "weight": 10 }, { "name": "book", "c
 result = {}
 
 
+
 # print(result)
 
 
@@ -258,7 +270,15 @@ books = [{ "author": "Jeff Smith", "title": "Bone" }, { "author": "George Orwell
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 result = {}
 
-
+i = 0
+while i < len(books):
+    book = books[i]
+    author = book["author"]
+    title = book["title"]
+    if author not in result:
+        result[author] = []
+    result[author].append(title)
+    i += 1
 
 # print(result)
 
@@ -312,7 +332,6 @@ for key in hash:
 #   value = hash[key]
 #   result[value] = key
 # print(result)
-
 
 
 
