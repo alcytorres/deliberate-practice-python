@@ -273,24 +273,23 @@ i1 = 0
 
 
 # Solution
-nums = [2, 5, 3, 1, 0, 7, 11]
-#         [3, 7]
-result = False
+nums = [2, 5, 3, 1, 0, 7, 11] 
+#         [3, 7]                
+result = False                  # Start with False; update to [num1, num2] if pair found
 
-i1 = 0
-while i1 < len(nums):
-    i2 = 0
-    while i2 < len(nums):
-        if i1 != i2:
-            if nums[i1] + nums[i2] == 10:
-                result = [nums[i1], nums[i2]]
-                break
-        i2 += 1
-    if result:
-        break
-    i1 += 1
+i1 = 0                          # Index for the first number, starts at 0
+while i1 < len(nums):           # Loop through each possible first number
+    i2 = 0                      # Index for the second number, resets to 0 for each i1
+    while i2 < len(nums):       # Loop through each possible second number
+        if i1 != i2 and nums[i1] + nums[i2] == 10:  # Check if indices differ and sum is 10
+            result = [nums[i1], nums[i2]]           # Store the pair in result
+            break                                   # Exit inner loop once pair is found
+        i2 += 1                  # Move to the next second number
+    if result:                   # If a pair was found (result is no longer False)
+        break                    # Exit outer loop to stop searching
+    i1 += 1                      # Move to the next first number
 
-# print(result)  
+# print(result)                    # Print the result: [3, 7] or False if no pair exists
 
 
 # 10. Use a nested loop to convert an array of string arrays into a single string.
