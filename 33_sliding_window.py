@@ -1,6 +1,15 @@
 # 3. Sliding Window
+"""
+Foundational Skills
+   - Array/string manipulation
+   - Loop control
+   - Conditional statements
+Potential Knowledge Gaps
+   - Managing window size (fixed vs. variable)
+   - Adjusting the window dynamically (e.g., shrinking or expanding)
+"""
 
-
+# ----------------------------------------------------------------------------------
 # 1. Maximum Sum of K Consecutive Elements
 """
 Maximum Sum of K Consecutive Elements
@@ -33,7 +42,6 @@ print(max_sum_k_consecutive([1, 2, 3, 4], 2))  # Output: 7 (3 + 4)
 
 # ----------------------------------------------------------------------------------
 # 2. Count Subarrays with Sum K
-
 """
 Count Subarrays with Sum K
 Task: Count subarrays with a given sum.
@@ -41,6 +49,7 @@ Example: [1, 2, 3], k=3 → 2 ([1, 2], [3])
 Why: Practices maintaining a window with a condition.
 """
 
+# Solution
 def count_subarrays_with_sum(arr, k):
     """
     Counts subarrays with sum equal to k (assuming non-negative numbers).
@@ -67,13 +76,13 @@ print(count_subarrays_with_sum([1, 2, 3], 3))  # Output: 2 ([1, 2], [3])
 
 # ----------------------------------------------------------------------------------
 # 3. Longest Substring with At Most K Vowels
-
 """
 Task: Find the longest substring with at most k vowels.
 Example: "aeiou", k=2 → "ae"
 Why: Introduces dynamic window adjustments.
 """
 
+# Solution
 def longest_substring_with_k_vowels(s, k):
     """
     Finds the longest substring with at most k vowels.
@@ -102,7 +111,6 @@ print(longest_substring_with_k_vowels("aeiou", 2))  # Output: 2
 
 # ----------------------------------------------------------------------------------
 # 4. Minimum Window with All Characters
-
 """
 Task: Find the smallest substring containing all characters of a pattern (e.g., "abc").
 Example: "adobecode", pattern "abc" → "adobec"
@@ -110,6 +118,7 @@ Why: Builds toward variable-size window problems.
 """
 
 
+# Solution
 def min_window_with_all_chars(s, pattern):
     """
     Finds the smallest substring containing all characters of the pattern.
@@ -147,9 +156,9 @@ def min_window_with_all_chars(s, pattern):
 # Test the function
 print(min_window_with_all_chars("adobecode", "abc"))  # Output: "adobec"
 
+
 # ----------------------------------------------------------------------------------
 # 5. Average of Sliding Window
-
 """
 Average of Sliding Window
 Task: Compute the average of all subarrays of size k.
@@ -157,6 +166,8 @@ Example: [1, 2, 3, 4], k=2 → [1.5, 2.5, 3.5]
 Why: Directly supports Maximum Average Subarray I.
 """
 
+
+# Solution
 def sliding_window_average(arr, k):
     """
     Computes the average of all subarrays of size k.
@@ -176,3 +187,4 @@ def sliding_window_average(arr, k):
 
 # Test the function
 print(sliding_window_average([1, 2, 3, 4], 2))  # Output: [1.5, 2.5, 3.5]
+

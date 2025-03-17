@@ -1,6 +1,14 @@
 # Depth First Search (DFS)
+"""
+Foundational Skills
+   - Recursion
+   - Stack (for iterative DFS)
+Potential Knowledge Gaps
+   - Managing recursion depth
+   - Tracking visited nodes in graphs
+"""
 
-
+# ----------------------------------------------------------------------------------
 # 1. Preorder Traversal
 """
 Task: Print nodes in preorder (root, left, right).

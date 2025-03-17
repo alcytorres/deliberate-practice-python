@@ -1,17 +1,24 @@
 # Prefix Sum
-
 """
 Foundational Skills
-Array manipulation
-Understanding cumulative sums
-Basic loop structures
+   - Array manipulation
+   - Understanding cumulative sums
+   - Basic loop structures
 Potential Knowledge Gaps
-Inefficient computation of running sums (e.g., recalculating sums repeatedly)
-Difficulty applying prefix sums to subarray problems
+   - Inefficient computation of running sums (e.g., recalculating sums repeatedly)
+   - Difficulty applying prefix sums to subarray problems
+"""
+
+# ----------------------------------------------------------------------------------
+# 1. Compute Prefix Sum Array
+"""
+Task: Given an array, create a new array of its prefix sums.
+Example: [1, 2, 3] → [1, 3, 6]
+Why: Direct practice for Running Sum of 1d Array.
 """
 
 
-
+# Solution
 def prefix_sum(arr):
     """
     Computes the prefix sum array where each element is the sum of all prior elements.
@@ -32,8 +39,14 @@ print(prefix_sum([1, 2, 3]))  # Output: [1, 3, 6]
 
 
 # ----------------------------------------------------------------------------------
-# Problem 2: Range Sum Query
+# 2. Range Sum Query
+"""
+Task: Find the sum of elements between two indices using prefix sums.
+Example: [1, 2, 3], indices 0 to 1 → 3 (1 + 2)
+Why: Teaches efficient range sum calculation.
+"""
 
+# Solution
 def range_sum(prefix, start, end):
     """
     Computes the sum of elements between start and end indices using prefix sums.
@@ -52,8 +65,15 @@ print(range_sum(prefix, 0, 1))  # Output: 3 (1 + 2)
 
 
 # ----------------------------------------------------------------------------------
-# Problem 3: Check Subarray with Zero Sum
+# 3. Check Subarray with Zero Sum
+"""
+Task: Determine if an array has a subarray summing to zero.
+Example: [4, -4, 1] → True
+Why: Introduces prefix sum applications beyond simple running sums.
+"""
 
+
+# Solution
 def has_zero_sum_subarray(arr):
     """
     Determines if there exists a subarray with sum zero.
@@ -77,8 +97,15 @@ print(has_zero_sum_subarray([4, -4, 1]))  # Output: True (4 + -4 = 0)
 
 
 # ----------------------------------------------------------------------------------
-# Problem 4: Maximum Subarray Sum of Size K
+# 4. Maximum Subarray Sum of Size K
+"""
+Task: Find the maximum sum of any subarray of size k.
+Example: [1, 2, 3, 4], k=2 → 7 (3 + 4)
+Why: Bridges to more complex subarray problems.
+"""
 
+
+# Solution
 def max_subarray_sum(arr, k):
     """
     Finds the maximum sum of any subarray of size k.
@@ -102,8 +129,14 @@ print(max_subarray_sum([1, 2, 3, 4], 2))  # Output: 7 (3 + 4)
 
 
 # ----------------------------------------------------------------------------------
-# Problem 5: Partition Array into Equal Sums
+# 5. Partition Array into Equal Sums
+"""
+Task: Check if an array can be split into two parts with equal sums.
+Example: [1, 5, 6] → True (1 + 5 = 6)
+Why: Reinforces cumulative sum usage.
+"""
 
+# Solution
 def can_partition(arr):
     """
     Checks if the array can be split into two parts with equal sums.

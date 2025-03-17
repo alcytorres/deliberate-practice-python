@@ -1,6 +1,14 @@
 # Modified Binary Search
+"""
+Foundational Skills
+   - Standard binary search
+   - Understanding array rotations or non-standard conditions
+Potential Knowledge Gaps
+   - Adapting binary search to rotated or unsorted-like arrays
+   - Identifying when a modified approach is needed
+"""
 
-
+# ----------------------------------------------------------------------------------
 # 1. Search in Rotated Sorted Array (Simple)
 """
 Task: Find a target in a rotated sorted array.
@@ -68,6 +76,7 @@ def find_min_in_rotated(arr):
 # Test the function
 print(find_min_in_rotated([3, 4, 5, 1, 2]))  # Output: 1
 
+
 # ----------------------------------------------------------------------------------
 # 3. Find Peak Element
 """
@@ -98,6 +107,7 @@ def find_peak_element(arr):
 # Test the function
 print(find_peak_element([1, 3, 2]))  # Output: 3
 
+
 # ----------------------------------------------------------------------------------
 # 4. Count Rotations
 """
@@ -127,6 +137,7 @@ def count_rotations(arr):
 
 # Test the function
 print(count_rotations([3, 4, 5, 1, 2]))  # Output: 3
+
 
 # ----------------------------------------------------------------------------------
 # 5. Binary Search on Reverse Sorted Array
@@ -159,5 +170,4 @@ def binary_search_reverse_sorted(arr, target):
 
 # Test the function
 print(binary_search_reverse_sorted([5, 4, 3, 2, 1], 3))  # Output: 2
-
 

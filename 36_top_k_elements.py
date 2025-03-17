@@ -1,6 +1,14 @@
 # Top 'K' Elements
+"""
+Foundational Skills
+   - Heap operations (min-heap, max-heap)
+   - Sorting algorithms
+Potential Knowledge Gaps
+   - Unfamiliarity with heap data structures
+   - Difficulty maintaining a heap of size k
+"""
 
-
+# ----------------------------------------------------------------------------------
 # 1. K Largest Elements
 """
 Task: Find the k largest elements in an array.

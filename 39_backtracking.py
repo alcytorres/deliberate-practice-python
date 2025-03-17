@@ -1,6 +1,14 @@
 # Backtracking
+"""
+Foundational Skills
+   - Recursion
+   - Decision tree exploration
+Potential Knowledge Gaps
+   - Knowing when to backtrack
+   - Managing state during recursion
+"""
 
-
+# ----------------------------------------------------------------------------------
 # 1. Generate All Subsets
 """
 Task: List all subsets of a small set.
@@ -146,6 +154,7 @@ Task: Place 4 queens on a 4x4 board so none attack each other.
 Example: Output a valid configuration
 Why: Classic backtracking problem.
 """
+
 
 # Solution
 def solve_n_queens(n):

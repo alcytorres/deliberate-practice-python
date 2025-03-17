@@ -1,6 +1,15 @@
 # Binary Search
+"""
+Foundational Skills
+   - Understanding sorted arrays
+   - Loop invariants (e.g., maintaining search bounds)
+   - Conditional statements
+Potential Knowledge Gaps
+   - Misunderstanding loop invariants (e.g., when to include mid)
+   - Handling edge cases (e.g., target not present, duplicates)
+"""
 
-
+# ----------------------------------------------------------------------------------
 # 1. Basic Binary Search
 """
 Task: Find the index of a target in a sorted array or return -1.
@@ -30,6 +39,7 @@ def binary_search(arr, target):
 
 # Test the function
 print(binary_search([1, 2, 3, 4], 3))  # Output: 2
+
 
 # ----------------------------------------------------------------------------------
 # 2. Find First Occurrence
@@ -98,6 +108,7 @@ def find_last_occurrence(arr, target):
 # Test the function
 print(find_last_occurrence([1, 2, 2, 3], 2))  # Output: 2
 
+
 # ----------------------------------------------------------------------------------
 # 4. Next Greater Element
 """
@@ -161,5 +172,4 @@ def integer_square_root(n):
 
 # Test the function
 print(integer_square_root(16))  # Output: 4
-
 

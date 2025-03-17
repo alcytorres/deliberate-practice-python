@@ -1,6 +1,17 @@
 # Two Pointers
+"""
+Foundational Skills
+   - Array indexing and manipulation
+   - Loop control (e.g., for, while)
+   - Conditional statements within loops
+   - Basic arithmetic operations
+Potential Knowledge Gaps
+   - Difficulty managing multiple pointers (e.g., moving them independently or in sync)
+   - Trouble visualizing pointer movements (e.g., from opposite ends or same direction)
+   - Handling edge cases (e.g., empty arrays, single elements)
+"""
 
-
+# ----------------------------------------------------------------------------------
 # 1. Sum of First and Last Elements
 """
 # Task: Given an array, return the sum of its first and last elements.

@@ -1,5 +1,12 @@
 # Breadth First Search (BFS)
-
+"""
+Foundational Skills
+   - Graph/tree traversal
+   - Queue data structure
+Potential Knowledge Gaps
+   - Unfamiliarity with queue operations
+   - Tracking visited nodes or levels
+"""
 
 # TreeNode Class
 class TreeNode:
@@ -129,7 +136,6 @@ print(shortest_path_in_grid(grid))  # Output: 4
 
 # ----------------------------------------------------------------------------------
 # 4. Check if Tree is Complete
-
 """
 Task: Verify if a binary tree is complete (all levels filled except possibly the last).
 Example: [1, 2, 3, 4] → True
@@ -167,7 +173,6 @@ print(is_complete_tree(root))  # Output: True
 
 # ----------------------------------------------------------------------------------
 # 5. Find Distance to Leaf
-
 """
 Task: Find the distance from root to the nearest leaf.
 Example: [1, 2, null, 3] → 2
@@ -200,5 +205,4 @@ def min_distance_to_leaf(root):
 # Test the function
 root = TreeNode(1, TreeNode(2, TreeNode(3)))
 print(min_distance_to_leaf(root))  # Output: 2
-
 
