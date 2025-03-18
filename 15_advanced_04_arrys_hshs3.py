@@ -36,7 +36,6 @@ items = [{ "id": 1, "color": "blue", "price": 32 }, { "id": 2, "color": "red", "
 result = {}
 
 
-
 # print(result)
 
 
@@ -57,8 +56,6 @@ while i < len(items):
 
 
 
-
-
 # 3. Convert a string into a hash with keys for each letter in the string and values for the number of times the letter appears in the string.
 #    For example, "bookkeeper" becomes {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}.
 
@@ -66,13 +63,6 @@ word = "bookkeeper"
 #      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
 result = {}
 
-i = 0
-while i < len(word):
-    letter = word[i]
-    if letter not in result:
-        result[letter] = 0
-    result[letter] += 1
-    i += 1
 
 # print(result)
 
@@ -148,11 +138,8 @@ persons = { 321: { "name": "Alice", "age": 31 }, 322: { "name": "Maria", "age": 
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
 result = []
 
-for id in persons:
-    person = persons[id]
-    person["id"] = id
-    result.append(person)
-    
+
+
 # print(result)
 
 
@@ -238,7 +225,6 @@ items = [{ "name": "chair", "color": "red", "weight": 10 }, { "name": "book", "c
 result = {}
 
 
-
 # print(result)
 
 
@@ -270,37 +256,29 @@ books = [{ "author": "Jeff Smith", "title": "Bone" }, { "author": "George Orwell
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 result = {}
 
-i = 0
-while i < len(books):
-    book = books[i]
-    author = book["author"]
-    title = book["title"]
-    if author not in result:
-        result[author] = []
-    result[author].append(title)
-    i += 1
+
 
 # print(result)
 
 
 
 # Solution
+# Goal: Turn an array of book hashes into a hash where authors are keys and titles are grouped in arrays
 books = [{ "author": "Jeff Smith", "title": "Bone" }, { "author": "George Orwell", "title": "1984" }, { "author": "Jeff Smith", "title": "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
-result = {}
+result = {}                      # Empty dictionary to store authors and their title lists
 
-i = 0
-while i < len(books):
-    book = books[i]
-    author = book["author"]
-    title = book["title"]
-    if author not in result:
-        result[author] = []
-    result[author].append(title)
-    i += 1
+i = 0                            # Start index at 0 to step through the books list
+while i < len(books):            # Loop until we’ve checked every book (length = 3)
+    book = books[i]              # Get the current book hash (e.g., {"author": "Jeff Smith", "title": "Bone"})
+    author = book["author"]      # Extract the author’s name (e.g., "Jeff Smith")
+    title = book["title"]        # Extract the book’s title (e.g., "Bone")
+    if author not in result:     # If this author isn’t in the dictionary yet
+        result[author] = []      # Create an empty list for their titles
+    result[author].append(title) # Add the current title to the author’s list
+    i += 1                       # Move to the next book in the list
 
-# print(result)
-
+print(result)                    # Show the final hash with authors and their titles
 
 
 # 10. Given a hash, create a new hash that has the keys and values switched.
@@ -334,16 +312,17 @@ for key in hash:
 # print(result)
 
 
+"""
+# Quick Decision Rule: → Update this to be more simple to understand
 
-# Quick Decision Rule:
-
-# Collection-Driven (Hash/List Keys) → for loop: “Iterate over items/keys directly.”
-        # Pattern: for item in collection or for key in hash.
+Collection-Driven (Hash/List Keys) → for loop: “Iterate over items/keys directly.”
+        Pattern: for item in collection or for key in hash.
         
-        # Key Insight: Use for when the problem says “for each [item/key] in [collection], do something” (e.g., “for each key, add it to the result”).
+        Key Insight: Use for when the problem says “for each [item/key] in [collection], do something” (e.g., “for each key, add it to the result”).
 
 
-# Position-Driven (List Indices) → while loop: “Iterate using an index.”
-        # Pattern: while i < len(sequence) with sequence[i].
+Position-Driven (List Indices) → while loop: “Iterate using an index.”
+        Pattern: while i < len(sequence) with sequence[i].
 
-        # Key Insight: Use while when the problem involves “stepping through a list” or “processing items at specific positions” (e.g., “for each position i, use the item at i”).
+        Key Insight: Use while when the problem involves “stepping through a list” or “processing items at specific positions” (e.g., “for each position i, use the item at i”)."
+"""
