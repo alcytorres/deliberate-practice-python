@@ -285,7 +285,7 @@ while i1 < len(nums):           # Loop through each possible first number
             result = [nums[i1], nums[i2]]           # Store the pair in result
             break                                   # Exit inner loop once pair is found
         i2 += 1                  # Move to the next second number
-    if result:                   # If a pair was found (result is no longer False)
+    if result:                   # If a pair was found (result is no longer False, result is truthy)
         break                    # Exit outer loop to stop searching
     i1 += 1                      # Move to the next first number
 
@@ -312,10 +312,10 @@ result = ""
 
 i1 = 0
 while i1 < len(strings):
-    string_pair = strings[i1]
+    pair = strings[i1]
     i2 = 0
-    while i2 < len(string_pair):
-        result += string_pair[i2]
+    while i2 < len(pair):
+        result += pair[i2]
         i2 += 1
     i1 += 1
 
