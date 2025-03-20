@@ -319,5 +319,6 @@ while i1 < len(strings):
         i2 += 1
     i1 += 1
 
-# print(result)
+print(result)
+
 
