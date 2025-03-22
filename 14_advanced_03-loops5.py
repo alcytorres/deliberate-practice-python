@@ -321,4 +321,3 @@ while i1 < len(strings):
 
 print(result)
 
-
