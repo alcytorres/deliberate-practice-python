@@ -9,6 +9,7 @@ nums = [[1, 3], [8, 9], [2, 16]]
 result = {}
 
 
+
 # print(result)
 
 
@@ -278,15 +279,16 @@ while i < len(books):            # Loop until we’ve checked every book (length
     result[author].append(title) # Add the current title to the author’s list
     i += 1                       # Move to the next book in the list
 
-print(result)                    # Show the final hash with authors and their titles
+# print(result)                    # Show the final hash with authors and their titles
 
 
 # 10. Given a hash, create a new hash that has the keys and values switched.
 #     For example, {"a" => 1, "b" => 2, "c" => 3} becomes {1 => "a", 2 => "b", 3 => "c"}.
 
 hash = { "a": 1, "b": 2, "c": 3 }
-#               {1 => "a", 2 => "b", 3 => "c"}
+#      {1 => "a", 2 => "b", 3 => "c"}
 result = {}
+
 
 
 # print(result)
