@@ -37,6 +37,7 @@ items = [{ "id": 1, "color": "blue", "price": 32 }, { "id": 2, "color": "red", "
 result = {}
 
 
+
 # print(result)
 
 
@@ -63,6 +64,7 @@ while i < len(items):
 word = "bookkeeper"
 #      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
 result = {}
+
 
 
 # print(result)
@@ -200,6 +202,7 @@ hash = { "a": 1, "b": 2, "c": 3, "d": 4 }
 result = []
 
 
+
 # print(result)
 
 
@@ -224,6 +227,7 @@ price_hash = { "chair": 75, "book": 15 }
 items = [{ "name": "chair", "color": "red", "weight": 10 }, { "name": "book", "color": "black", "weight": 1 }]
 #        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
 result = {}
+
 
 
 # print(result)

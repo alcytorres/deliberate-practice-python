@@ -70,7 +70,6 @@ letters = ["a", "b", "c", "d"]
 #         ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
 result = []
 
-i1 = 0
 
 
 # print(result)
@@ -135,8 +134,7 @@ nums = [[1, 3], [8, 9], [2, 16]]
 #         39
 total = 0
 
-i1 = 0
-
+  
     
 # print(total)
 
@@ -300,7 +298,13 @@ strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
 result = ""
 
 i1 = 0
-
+while i1 < len(strings):
+    pair = strings[i1]
+    i2 = 0
+    while i2 < len(pair):
+        result += pair[i2]
+        i2 += 1
+    i1 += 1
 
 # print(result)
 
@@ -319,5 +323,5 @@ while i1 < len(strings):
         i2 += 1
     i1 += 1
 
-print(result)
+# print(result)
 
