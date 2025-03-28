@@ -16,6 +16,18 @@ Example: [1, 2, 3] → [1, 2, 3]
 Why: Basic recursive DFS practice.
 """
 
+def preorder_traversal(root):
+    if not root:
+        return []
+    return ([root.val] + 
+            preorder_traversal(root.left) + 
+            preorder_traversal(root.right))
+
+# Test the function
+root = TreeNode(1, TreeNode(2), TreeNode(3))
+# print(preorder_traversal(root))  # Output: [1, 2, 3]
+
+
 # Solution
 def preorder_traversal(root):
     """
@@ -33,7 +45,7 @@ def preorder_traversal(root):
 
 # Test the function
 root = TreeNode(1, TreeNode(2), TreeNode(3))
-print(preorder_traversal(root))  # Output: [1, 2, 3]
+# print(preorder_traversal(root))  # Output: [1, 2, 3]
 
 
 # ----------------------------------------------------------------------------------
@@ -43,6 +55,18 @@ Task: Count the number of leaf nodes in a tree.
 Example: [1, 2, 3] → 2 (2, 3)
 Why: Reinforces recursion termination.
 """
+
+def count_leaves(root):
+    if not root:
+        return 0
+    if not root.left and not root.right:
+        return 1  # Leaf node
+    return count_leaves(root.left) + count_leaves(root.right)
+
+# Test the function
+root = TreeNode(1, TreeNode(2), TreeNode(3))
+# print(count_leaves(root))  # Output: 2
+
 
 # Solution
 def count_leaves(root):
@@ -61,7 +85,7 @@ def count_leaves(root):
 
 # Test the function
 root = TreeNode(1, TreeNode(2), TreeNode(3))
-print(count_leaves(root))  # Output: 2
+# print(count_leaves(root))  # Output: 2
 
 
 # ----------------------------------------------------------------------------------
@@ -71,6 +95,20 @@ Task: List all paths from root to leaves.
 Example: [1, 2, 3] → [[1, 2], [1, 3]]
 Why: Builds path-tracking skills.
 """
+
+def all_paths(root):
+    if not root:
+        return []
+    if not root.left and not root.right:
+        return [[root.val]]  # Leaf node path
+    left_paths = all_paths(root.left)
+    right_paths = all_paths(root.right)
+    return [[root.val] + path for path in left_paths + right_paths]
+
+# Test the function
+root = TreeNode(1, TreeNode(2), TreeNode(3))
+# print(all_paths(root))  # Output: [[1, 2], [1, 3]]
+
 
 # Solution
 def all_paths(root):
@@ -91,7 +129,7 @@ def all_paths(root):
 
 # Test the function
 root = TreeNode(1, TreeNode(2), TreeNode(3))
-print(all_paths(root))  # Output: [[1, 2], [1, 3]]
+# print(all_paths(root))  # Output: [[1, 2], [1, 3]]
 
 
 # ----------------------------------------------------------------------------------
@@ -101,6 +139,22 @@ Task: Check if a small tree is symmetric.
 Example: [1, 2, 2] → True
 Why: Direct prep for Symmetric Tree.
 """
+
+def is_symmetric(root):
+    def is_mirror(left, right):
+        if not left and not right:
+            return True
+        if not left or not right:
+            return False
+        return (left.val == right.val and 
+                is_mirror(left.left, right.right) and 
+                is_mirror(left.right, right.left))
+    return is_mirror(root, root) if root else True
+
+# Test the function
+root = TreeNode(1, TreeNode(2), TreeNode(2))
+# print(is_symmetric(root))  # Output: True
+
 
 # Solution
 def is_symmetric(root):
@@ -134,6 +188,18 @@ Example: [1, 2, 3] → 2
 Why: Uses DFS to explore depth.
 """
 
+def tree_height(root):
+    if not root:
+        return 0
+    left_height = tree_height(root.left)
+    right_height = tree_height(root.right)
+    return 1 + max(left_height, right_height)
+
+# Test the function
+root = TreeNode(1, TreeNode(2), TreeNode(3))
+# print(tree_height(root))  # Output: 2
+
+
 # Solution
 def tree_height(root):
     """
@@ -151,6 +217,6 @@ def tree_height(root):
 
 # Test the function
 root = TreeNode(1, TreeNode(2), TreeNode(3))
-print(tree_height(root))  # Output: 2
+# print(tree_height(root))  # Output: 2
 
 

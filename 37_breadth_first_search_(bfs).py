@@ -23,6 +23,30 @@ Example: [1, 2, 3] → [1], [2, 3]
 Why: Core BFS practice for Maximum Depth of Binary Tree.
 """
 
+from collections import deque
+
+def level_order_traversal(root):
+    if not root:
+        return []
+    result = []
+    queue = deque([root])
+    while queue:
+        level = []
+        for _ in range(len(queue)):  # Process all nodes at current level
+            node = queue.popleft()
+            level.append(node.val)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        result.append(level)
+    return result
+
+# Test the function
+root = TreeNode(1, TreeNode(2), TreeNode(3))
+# print(level_order_traversal(root))  # Output: [[1], [2, 3]]
+
+
 # Solution
 from collections import deque
 
@@ -52,7 +76,7 @@ def level_order_traversal(root):
 
 # Test the function
 root = TreeNode(1, TreeNode(2), TreeNode(3))
-print(level_order_traversal(root))  # Output: [[1], [2, 3]]
+# print(level_order_traversal(root))  # Output: [[1], [2, 3]]
 
 
 # ----------------------------------------------------------------------------------
@@ -62,6 +86,27 @@ Task: Count nodes at a given level in a tree.
 Example: [1, 2, 3], k=1 → 2 (2, 3)
 Why: Reinforces level tracking."
 """
+
+def count_nodes_at_level(root, k):
+    if not root:
+        return 0
+    queue = deque([root])
+    level = 0
+    while queue:
+        if level == k:
+            return len(queue)  # Number of nodes at level k
+        for _ in range(len(queue)):
+            node = queue.popleft()
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        level += 1
+    return 0
+
+# Test the function
+root = TreeNode(1, TreeNode(2), TreeNode(3))
+# print(count_nodes_at_level(root, 1))  # Output: 2
 
 
 # Solution
@@ -91,7 +136,7 @@ def count_nodes_at_level(root, k):
 
 # Test the function
 root = TreeNode(1, TreeNode(2), TreeNode(3))
-print(count_nodes_at_level(root, 1))  # Output: 2
+# print(count_nodes_at_level(root, 1))  # Output: 2
 
 
 # ----------------------------------------------------------------------------------
@@ -101,6 +146,30 @@ Task: Find the shortest path from top-left to bottom-right in a 3x3 grid.
 Example: [[1, 1, 1], [1, 0, 1], [1, 1, 1]] → 4
 Why: Applies BFS to a simple graph.
 """
+
+def shortest_path_in_grid(grid):
+    if not grid or grid[0][0] == 0:
+        return -1
+    rows, cols = len(grid), len(grid[0])
+    queue = deque([(0, 0, 1)])  # (row, col, distance)
+    visited = {(0, 0)}
+    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+    while queue:
+        row, col, dist = queue.popleft()
+        if row == rows - 1 and col == cols - 1:
+            return dist
+        for dr, dc in directions:
+            nr, nc = row + dr, col + dc
+            if (0 <= nr < rows and 0 <= nc < cols and 
+                grid[nr][nc] == 1 and (nr, nc) not in visited):
+                visited.add((nr, nc))
+                queue.append((nr, nc, dist + 1))
+    return -1
+
+# Test the function
+grid = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
+# print(shortest_path_in_grid(grid))  # Output: 4
+
 
 # Solution
 def shortest_path_in_grid(grid):
@@ -131,7 +200,7 @@ def shortest_path_in_grid(grid):
 
 # Test the function
 grid = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
-print(shortest_path_in_grid(grid))  # Output: 4
+# print(shortest_path_in_grid(grid))  # Output: 4
 
 
 # ----------------------------------------------------------------------------------
@@ -141,6 +210,27 @@ Task: Verify if a binary tree is complete (all levels filled except possibly the
 Example: [1, 2, 3, 4] → True
 Why: Uses BFS to check structure.
 """
+
+def is_complete_tree(root):
+    if not root:
+        return True
+    queue = deque([root])
+    end = False  # Flag for when null nodes start appearing
+    while queue:
+        node = queue.popleft()
+        if node is None:
+            end = True
+        else:
+            if end:
+                return False  # Non-null after null means not complete
+            queue.append(node.left)
+            queue.append(node.right)
+    return True
+
+# Test the function
+root = TreeNode(1, TreeNode(2, TreeNode(4)), TreeNode(3))
+# print(is_complete_tree(root))  # Output: True
+
 
 # Solution
 def is_complete_tree(root):
@@ -168,7 +258,7 @@ def is_complete_tree(root):
 
 # Test the function
 root = TreeNode(1, TreeNode(2, TreeNode(4)), TreeNode(3))
-print(is_complete_tree(root))  # Output: True
+# print(is_complete_tree(root))  # Output: True
 
 
 # ----------------------------------------------------------------------------------
@@ -178,6 +268,24 @@ Task: Find the distance from root to the nearest leaf.
 Example: [1, 2, null, 3] → 2
 Why: Prepares for depth-related problems."
 """
+
+def min_distance_to_leaf(root):
+    if not root:
+        return 0
+    queue = deque([(root, 0)])  # (node, depth)
+    while queue:
+        node, depth = queue.popleft()
+        if not node.left and not node.right:
+            return depth  # Leaf found
+        if node.left:
+            queue.append((node.left, depth + 1))
+        if node.right:
+            queue.append((node.right, depth + 1))
+    return -1
+
+# Test the function
+root = TreeNode(1, TreeNode(2, TreeNode(3)))
+# print(min_distance_to_leaf(root))  # Output: 2
 
 
 # Solution
@@ -204,5 +312,5 @@ def min_distance_to_leaf(root):
 
 # Test the function
 root = TreeNode(1, TreeNode(2, TreeNode(3)))
-print(min_distance_to_leaf(root))  # Output: 2
+# print(min_distance_to_leaf(root))  # Output: 2
 

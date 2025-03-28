@@ -17,6 +17,22 @@ Example: [1, 2, 3, 4], target 3 → 2
 Why: Core practice for Binary Search.
 """
 
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2  # Integer division for midpoint
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1  # Search right half
+        else:
+            right = mid - 1  # Search left half
+    return -1
+
+# Test the function
+# print(binary_search([1, 2, 3, 4], 3))  # Output: 2
+
+
 # Solution
 def binary_search(arr, target):
     """
@@ -38,7 +54,7 @@ def binary_search(arr, target):
     return -1
 
 # Test the function
-print(binary_search([1, 2, 3, 4], 3))  # Output: 2
+# print(binary_search([1, 2, 3, 4], 3))  # Output: 2
 
 
 # ----------------------------------------------------------------------------------
@@ -48,6 +64,24 @@ Task: Find the first occurrence of a target in a sorted array with duplicates.
 Example: [1, 2, 2, 3], target 2 → 1
 Why: Introduces binary search variations.
 """
+
+def find_first_occurrence(arr, target):
+    left, right = 0, len(arr) - 1
+    result = -1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            result = mid    # Record position but keep searching left
+            right = mid - 1
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return result
+
+# Test the function
+# print(find_first_occurrence([1, 2, 2, 3], 2))  # Output: 1
+
 
 # Solution
 def find_first_occurrence(arr, target):
@@ -72,7 +106,7 @@ def find_first_occurrence(arr, target):
     return result
 
 # Test the function
-print(find_first_occurrence([1, 2, 2, 3], 2))  # Output: 1
+# print(find_first_occurrence([1, 2, 2, 3], 2))  # Output: 1
 
 
 # ----------------------------------------------------------------------------------
@@ -82,6 +116,24 @@ Task: Find the last occurrence of a target in a sorted array with duplicates.
 Example: [1, 2, 2, 3], target 2 → 2
 Why: Reinforces boundary handling.
 """
+
+def find_last_occurrence(arr, target):
+    left, right = 0, len(arr) - 1
+    result = -1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            result = mid   # Record position but keep searching right
+            left = mid + 1
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return result
+
+# Test the function
+# print(find_last_occurrence([1, 2, 2, 3], 2))  # Output: 2
+
 
 # Solution
 def find_last_occurrence(arr, target):
@@ -106,7 +158,7 @@ def find_last_occurrence(arr, target):
     return result
 
 # Test the function
-print(find_last_occurrence([1, 2, 2, 3], 2))  # Output: 2
+# print(find_last_occurrence([1, 2, 2, 3], 2))  # Output: 2
 
 
 # ----------------------------------------------------------------------------------
@@ -116,6 +168,20 @@ Task: Find the smallest element greater than the target.
 Example: [1, 3, 5], target 2 → 3
 Why: Prepares for real-world binary search tweaks.
 """
+
+def next_greater_element(arr, target):
+    left, right = 0, len(arr) - 1
+    while left < right:
+        mid = (left + right) // 2
+        if arr[mid] <= target:
+            left = mid + 1  # Move to right half
+        else:
+            right = mid     # Potential answer, but check left
+    return arr[left] if left < len(arr) and arr[left] > target else None
+
+# Test the function
+# print(next_greater_element([1, 3, 5], 2))  # Output: 3
+
 
 # Solution
 def next_greater_element(arr, target):
@@ -136,7 +202,7 @@ def next_greater_element(arr, target):
     return arr[left] if left < len(arr) and arr[left] > target else None
 
 # Test the function
-print(next_greater_element([1, 3, 5], 2))  # Output: 3
+# print(next_greater_element([1, 3, 5], 2))  # Output: 3
 
 
 # ----------------------------------------------------------------------------------
@@ -146,6 +212,25 @@ Task: Find the integer square root of a number using binary search.
 Example: 16 → 4
 Why: Applies binary search to a different domain."
 """
+
+def integer_square_root(n):
+    if n < 0:
+        return None
+    left, right = 0, n
+    while left <= right:
+        mid = (left + right) // 2
+        mid_squared = mid * mid
+        if mid_squared == n:
+            return mid
+        elif mid_squared < n:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return right  # Largest integer where square <= n
+
+# Test the function
+# print(integer_square_root(16))  # Output: 4
+
 
 # Solution
 def integer_square_root(n):
@@ -171,5 +256,5 @@ def integer_square_root(n):
     return right  # Largest integer where square <= n
 
 # Test the function
-print(integer_square_root(16))  # Output: 4
+# print(integer_square_root(16))  # Output: 4
 

@@ -16,6 +16,23 @@ Example: [1, 3, 5, 2], k=2 → [5, 3]
 Why: Introduces top-k selection."
 """
 
+import heapq
+
+def k_largest_elements(arr, k):
+    if k > len(arr):
+        return None
+    heap = arr[:k]  # Take first k elements
+    heapq.heapify(heap)  # Create min-heap
+    for num in arr[k:]:
+        if num > heap[0]:
+            heapq.heappop(heap)  # Remove smallest
+            heapq.heappush(heap, num)  # Add larger element
+    return heap
+
+# Test the function
+# print(k_largest_elements([1, 3, 5, 2], 2))  # Output: [3, 5] (order may vary)
+
+
 # Solution
 import heapq
 
@@ -38,7 +55,7 @@ def k_largest_elements(arr, k):
     return heap
 
 # Test the function
-print(k_largest_elements([1, 3, 5, 2], 2))  # Output: [3, 5] (order may vary)
+# print(k_largest_elements([1, 3, 5, 2], 2))  # Output: [3, 5] (order may vary)
 
 
 # ----------------------------------------------------------------------------------
@@ -48,6 +65,16 @@ Task: Find the kth largest element in an array.
 Example: [3, 2, 1, 5], k=2 → 3
 Why: Prepares for Top 'K' Frequent Elements.
 """
+
+def kth_largest_element(arr, k):
+    if k > len(arr):
+        return None
+    sorted_arr = sorted(arr)
+    return sorted_arr[-k]
+
+# Test the function
+# print(kth_largest_element([3, 2, 1, 5], 2))  # Output: 3
+
 
 # Solution
 def kth_largest_element(arr, k):
@@ -64,7 +91,7 @@ def kth_largest_element(arr, k):
     return sorted_arr[-k]
 
 # Test the function
-print(kth_largest_element([3, 2, 1, 5], 2))  # Output: 3
+# print(kth_largest_element([3, 2, 1, 5], 2))  # Output: 3
 
 
 # ----------------------------------------------------------------------------------
@@ -74,6 +101,16 @@ Task: Sort the first k elements of an array in descending order.
 Example: [1, 4, 3, 2], k=3 → [4, 3, 1, 2]
 Why: Builds sorting intuition without heaps.
 """
+
+def sort_first_k(arr, k):
+    if k > len(arr):
+        return arr
+    arr[:k] = sorted(arr[:k], reverse=True)
+    return arr
+
+# Test the function
+# print(sort_first_k([1, 4, 3, 2], 3))  # Output: [4, 3, 1, 2]
+
 
 # Solution
 def sort_first_k(arr, k):
@@ -90,7 +127,7 @@ def sort_first_k(arr, k):
     return arr
 
 # Test the function
-print(sort_first_k([1, 4, 3, 2], 3))  # Output: [4, 3, 1, 2]
+# print(sort_first_k([1, 4, 3, 2], 3))  # Output: [4, 3, 1, 2]
 
 
 # ----------------------------------------------------------------------------------
@@ -100,6 +137,21 @@ Task: Find the k smallest elements in an array.
 Example: [5, 2, 1, 4], k=2 → [1, 2]
 Why: Encourages heap-like thinking.
 """
+
+def k_smallest_elements(arr, k):
+    if k > len(arr):
+        return None
+    heap = [-num for num in arr[:k]]  # Negate for max-heap behavior
+    heapq.heapify(heap)
+    for num in arr[k:]:
+        if -num > heap[0]:  # Compare with largest negative
+            heapq.heappop(heap)
+            heapq.heappush(heap, -num)
+    return [-num for num in heap]  # Convert back to positive
+
+# Test the function
+# print(k_smallest_elements([5, 2, 1, 4], 2))  # Output: [1, 2] (order may vary)
+
 
 # Solution
 def k_smallest_elements(arr, k):
@@ -121,7 +173,7 @@ def k_smallest_elements(arr, k):
     return [-num for num in heap]  # Convert back to positive
 
 # Test the function
-print(k_smallest_elements([5, 2, 1, 4], 2))  # Output: [1, 2] (order may vary)
+# print(k_smallest_elements([5, 2, 1, 4], 2))  # Output: [1, 2] (order may vary)
 
 
 # ----------------------------------------------------------------------------------
@@ -131,6 +183,24 @@ Task: Merge k sorted lists of size 2 into one sorted list.
 Example: [[1, 3], [2, 4]] → [1, 2, 3, 4]
 Why: Introduces multi-list handling."
 """
+
+def merge_k_sorted_lists(lists):
+    heap = []
+    for i, lst in enumerate(lists):
+        if lst:
+            heapq.heappush(heap, (lst[0], i, 0))  # (value, list index, element index)
+    result = []
+    while heap:
+        val, list_idx, elem_idx = heapq.heappop(heap)
+        result.append(val)
+        if elem_idx + 1 < len(lists[list_idx]):
+            next_val = lists[list_idx][elem_idx + 1]
+            heapq.heappush(heap, (next_val, list_idx, elem_idx + 1))
+    return result
+
+# Test the function
+# print(merge_k_sorted_lists([[1, 3], [2, 4]]))  # Output: [1, 2, 3, 4]
+
 
 # Solution
 def merge_k_sorted_lists(lists):
@@ -155,6 +225,5 @@ def merge_k_sorted_lists(lists):
     return result
 
 # Test the function
-print(merge_k_sorted_lists([[1, 3], [2, 4]]))  # Output: [1, 2, 3, 4]
-
+# print(merge_k_sorted_lists([[1, 3], [2, 4]]))  # Output: [1, 2, 3, 4]
 

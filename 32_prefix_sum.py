@@ -17,6 +17,17 @@ Example: [1, 2, 3] → [1, 3, 6]
 Why: Direct practice for Running Sum of 1d Array.
 """
 
+def prefix_sum(arr):
+    if not arr:
+        return []
+    result = [arr[0]]  # First element is the same
+    for i in range(1, len(arr)):
+        result.append(result[-1] + arr[i])  # Add current element to previous sum
+    return result
+
+# Test the function
+# print(prefix_sum([1, 2, 3]))  # Output: [1, 3, 6]
+
 
 # Solution
 def prefix_sum(arr):
@@ -35,7 +46,7 @@ def prefix_sum(arr):
     return result
 
 # Test the function
-print(prefix_sum([1, 2, 3]))  # Output: [1, 3, 6]
+# print(prefix_sum([1, 2, 3]))  # Output: [1, 3, 6]
 
 
 # ----------------------------------------------------------------------------------
@@ -45,6 +56,16 @@ Task: Find the sum of elements between two indices using prefix sums.
 Example: [1, 2, 3], indices 0 to 1 → 3 (1 + 2)
 Why: Teaches efficient range sum calculation.
 """
+
+def range_sum(prefix, start, end):
+    if start == 0:
+        return prefix[end]  # Sum from start of array
+    return prefix[end] - prefix[start - 1]  # Difference gives range sum
+
+# Test the function
+prefix = prefix_sum([1, 2, 3])
+# print(range_sum(prefix, 0, 1))  # Output: 3 (1 + 2)
+
 
 # Solution
 def range_sum(prefix, start, end):
@@ -61,7 +82,7 @@ def range_sum(prefix, start, end):
 
 # Test the function
 prefix = prefix_sum([1, 2, 3])
-print(range_sum(prefix, 0, 1))  # Output: 3 (1 + 2)
+# print(range_sum(prefix, 0, 1))  # Output: 3 (1 + 2)
 
 
 # ----------------------------------------------------------------------------------
@@ -71,6 +92,19 @@ Task: Determine if an array has a subarray summing to zero.
 Example: [4, -4, 1] → True
 Why: Introduces prefix sum applications beyond simple running sums.
 """
+
+def has_zero_sum_subarray(arr):
+    prefix_sum = 0
+    seen = set()
+    for num in arr:
+        prefix_sum += num  # Update running sum
+        if prefix_sum == 0 or prefix_sum in seen:
+            return True  # Zero sum found
+        seen.add(prefix_sum)
+    return False
+
+# Test the function
+# print(has_zero_sum_subarray([4, -4, 1]))  # Output: True (4 + -4 = 0)
 
 
 # Solution
@@ -92,7 +126,7 @@ def has_zero_sum_subarray(arr):
     return False
 
 # Test the function
-print(has_zero_sum_subarray([4, -4, 1]))  # Output: True (4 + -4 = 0)
+# print(has_zero_sum_subarray([4, -4, 1]))  # Output: True (4 + -4 = 0)
 
 
 
@@ -103,6 +137,19 @@ Task: Find the maximum sum of any subarray of size k.
 Example: [1, 2, 3, 4], k=2 → 7 (3 + 4)
 Why: Bridges to more complex subarray problems.
 """
+
+def max_subarray_sum(arr, k):
+    if len(arr) < k:
+        return None
+    prefix = prefix_sum(arr)
+    max_sum = prefix[k - 1]  # First window sum
+    for i in range(k, len(arr)):
+        current_sum = prefix[i] - prefix[i - k]  # Sum of current window
+        max_sum = max(max_sum, current_sum)
+    return max_sum
+
+# Test the function
+# print(max_subarray_sum([1, 2, 3, 4], 2))  # Output: 7 (3 + 4)
 
 
 # Solution
@@ -124,7 +171,7 @@ def max_subarray_sum(arr, k):
     return max_sum
 
 # Test the function
-print(max_subarray_sum([1, 2, 3, 4], 2))  # Output: 7 (3 + 4)
+# print(max_subarray_sum([1, 2, 3, 4], 2))  # Output: 7 (3 + 4)
 
 
 
@@ -135,6 +182,22 @@ Task: Check if an array can be split into two parts with equal sums.
 Example: [1, 5, 6] → True (1 + 5 = 6)
 Why: Reinforces cumulative sum usage.
 """
+
+def can_partition(arr):
+    total_sum = sum(arr)
+    if total_sum % 2 != 0:
+        return False  # Odd sum can't be split evenly
+    target = total_sum // 2
+    prefix_sum = 0
+    for num in arr:
+        prefix_sum += num
+        if prefix_sum == target:
+            return True  # Found a split point
+    return False
+
+# Test the function
+# print(can_partition([1, 5, 6]))  # Output: True (1 + 5 = 6)
+
 
 # Solution
 def can_partition(arr):
@@ -157,4 +220,4 @@ def can_partition(arr):
     return False
 
 # Test the function
-print(can_partition([1, 5, 6]))  # Output: True (1 + 5 = 6)
+# print(can_partition([1, 5, 6]))  # Output: True (1 + 5 = 6)
