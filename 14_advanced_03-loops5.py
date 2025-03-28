@@ -70,6 +70,7 @@ letters = ["a", "b", "c", "d"]
 #         ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
 result = []
 
+i1 = 0
 
 
 # print(result)
@@ -134,7 +135,8 @@ nums = [[1, 3], [8, 9], [2, 16]]
 #         39
 total = 0
 
-  
+i1 = 0
+
     
 # print(total)
 
