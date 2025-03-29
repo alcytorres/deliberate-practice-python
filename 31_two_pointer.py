@@ -35,7 +35,7 @@ def sum_first_last(arr):
 
 
 # Solution
-def sum_first_last(arr):
+def sum_first_last(arr):   # Define the function that takes an array 'arr' as input
     """
     Returns the sum of the first and last elements of the array.
     
@@ -77,7 +77,7 @@ def is_sorted(arr):
 
 
 # Solution
-def is_sorted(arr):
+def is_sorted(arr):   # Define the function that takes an array 'arr' as input
     """
     Determines if the array is sorted in ascending order.
     
@@ -122,7 +122,7 @@ def reverse_array(arr):
 
 
 # Solution
-def reverse_array(arr):
+def reverse_array(arr):   # Define the function that takes an array 'arr' as input
     """
     Reverses the array in-place using two pointers.
     
@@ -169,7 +169,7 @@ def find_pair_with_difference(arr, target):
 
 
 # Solution
-def find_pair_with_difference(arr, target):
+def find_pair_with_difference(arr, target):   # Define the function that takes an array 'arr' and an integer 'target' as inputs
     """
     Finds two numbers in the array whose difference equals the target.
     
@@ -221,7 +221,7 @@ def merge_sorted_arrays(arr1, arr2):
 
 
 # Solution
-def merge_sorted_arrays(arr1, arr2):
+def merge_sorted_arrays(arr1, arr2):   # Define the function that takes two arrays 'arr1' and 'arr2' as inputs
     """
     Merges two sorted arrays into one sorted array.
     
