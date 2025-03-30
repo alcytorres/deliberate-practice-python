@@ -50,7 +50,7 @@ def sum_first_last(arr):   # Define the function that takes an array 'arr' as in
     return first + last   # Add the first and last elements and return the result
 
 # Test the function
-# print(sum_first_last([1, 2, 3]))  # Output: 4 (1 + 3)
+print(sum_first_last([1, 2, 3]))  # Output: 4 (1 + 3)
 
 
 # ----------------------------------------------------------------------------------
@@ -109,7 +109,6 @@ Example: [1, 2, 3] → [3, 2, 1]
 Why: Builds intuition for swapping elements with pointers, relevant to Valid Palindrome. 
 """
 
-# Solution
 def reverse_array(arr):
     left, right = 0, len(arr) - 1   
     while left < right:             
@@ -245,3 +244,4 @@ def merge_sorted_arrays(arr1, arr2):   # Define the function that takes two arra
 
 # Test the function
 # print(merge_sorted_arrays([1, 3], [2, 4]))  # Output: [1, 2, 3, 4]
+

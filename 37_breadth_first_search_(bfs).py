@@ -330,3 +330,4 @@ def min_distance_to_leaf(root):   # Define the function that takes the root of a
 root = TreeNode(1, TreeNode(2, TreeNode(3)))
 # print(min_distance_to_leaf(root))  # Output: 2
 
+

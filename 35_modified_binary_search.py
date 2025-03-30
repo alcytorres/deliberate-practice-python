@@ -247,3 +247,4 @@ def binary_search_reverse_sorted(arr, target):   # Define the function that take
 # Test the function
 # print(binary_search_reverse_sorted([5, 4, 3, 2, 1], 3))  # Output: 2
 
+

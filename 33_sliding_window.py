@@ -281,3 +281,4 @@ def sliding_window_average(arr, k):   # Define the function that takes an array 
 # Test the function
 # print(sliding_window_average([1, 2, 3, 4], 2))  # Output: [1.5, 2.5, 3.5]
 
+
