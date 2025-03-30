@@ -167,75 +167,6 @@ Example: "adobecode", pattern "abc" → "adobec"
 Why: Builds toward variable-size window problems.
 """
 
-def min_window_with_all_chars(s, pattern):
-    from collections import Counter
-    pattern_count = Counter(pattern)  # Frequency of each pattern char
-    required = len(pattern_count)     # Number of unique chars to match
-    formed = 0                        # Number of chars fully matched
-    left, right = 0, 0
-    window_counts = {}                # Frequency in current window
-    min_length = float('inf')
-    min_window = ""
-
-    while right < len(s):
-        char = s[right]
-        window_counts[char] = window_counts.get(char, 0) + 1
-        if char in pattern_count and window_counts[char] == pattern_count[char]:
-            formed += 1  # A character requirement is met
-        while left <= right and formed == required:
-            if right - left + 1 < min_length:
-                min_length = right - left + 1
-                min_window = s[left:right + 1]
-            char = s[left]
-            window_counts[char] -= 1
-            if char in pattern_count and window_counts[char] < pattern_count[char]:
-                formed -= 1  # A requirement is no longer met
-            left += 1
-        right += 1
-    return min_window if min_length != float('inf') else ""
-
-# Test the function
-# print(min_window_with_all_chars("adobecode", "abc"))  # Output: "adobec"
-
-
-# Solution
-def min_window_with_all_chars(s, pattern):   # Define the function that takes a string 's' and pattern string
-    """
-    Finds the smallest substring containing all characters of the pattern.
-    
-    - Uses a sliding window with a frequency map for efficiency.
-    - Time Complexity: O(n), Space Complexity: O(k) where k is pattern length.
-    - Chosen over brute force for efficiency, with comments to aid understanding.
-    """
-    from collections import Counter  # Import Counter for frequency counting
-    pattern_count = Counter(pattern)  # Count the frequency of each character in the pattern
-    required = len(pattern_count)     # Number of unique characters we need to match
-    formed = 0                        # Number of characters fully matched in the window
-    left, right = 0, 0                # Initialize left and right pointers for the window
-    window_counts = {}                # Dictionary to track character frequencies in the window
-    min_length = float('inf')         # Initialize minimum length to infinity
-    min_window = ""                   # Initialize the result substring
-
-    while right < len(s):             # Loop until the right pointer reaches the end of the string
-        char = s[right]               # Get the current character at the right pointer
-        window_counts[char] = window_counts.get(char, 0) + 1  # Add it to the window's frequency count
-        if char in pattern_count and window_counts[char] == pattern_count[char]:  # If this character is in the pattern and fully matched
-            formed += 1               # Increment the count of fully matched characters
-        while left <= right and formed == required:  # If all pattern characters are matched, try to shrink the window
-            if right - left + 1 < min_length:  # If the current window is smaller than the previous minimum
-                min_length = right - left + 1  # Update the minimum length
-                min_window = s[left:right + 1]  # Update the result substring
-            char = s[left]                # Get the character at the left pointer
-            window_counts[char] -= 1      # Decrease its frequency in the window
-            if char in pattern_count and window_counts[char] < pattern_count[char]:  # If this breaks a match
-                formed -= 1               # Decrease the count of fully matched characters
-            left += 1                     # Move the left pointer one step right
-        right += 1                        # Move the right pointer one step right
-    return min_window if min_length != float('inf') else ""  # Return the smallest window or empty string if none found
-
-# Test the function
-# print(min_window_with_all_chars("adobecode", "abc"))  # Output: "adobec"
-
 
 # ----------------------------------------------------------------------------------
 # 5. Average of Sliding Window
@@ -280,5 +211,4 @@ def sliding_window_average(arr, k):   # Define the function that takes an array 
 
 # Test the function
 # print(sliding_window_average([1, 2, 3, 4], 2))  # Output: [1.5, 2.5, 3.5]
-
 

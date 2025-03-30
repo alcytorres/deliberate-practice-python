@@ -222,3 +222,4 @@ def can_partition(arr):    # Define the function that takes an array 'arr' as in
 # Test the function
 # print(can_partition([1, 5, 6]))  # Output: True (1 + 5 = 6)
 
+

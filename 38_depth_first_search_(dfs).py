@@ -221,3 +221,4 @@ def tree_height(root):   # Define the function that takes the root of a binary t
 root = TreeNode(1, TreeNode(2), TreeNode(3))
 # print(tree_height(root))  # Output: 2
 
+

@@ -281,4 +281,3 @@ def solve_n_queens(n):   # Define the function that takes board size 'n' as inpu
 # Test the function
 # print(solve_n_queens(4))  # Output: [[1, 3, 0, 2], [2, 0, 3, 1]]
 
-
