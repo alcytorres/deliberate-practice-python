@@ -196,7 +196,7 @@ def can_partition(arr):
     return False
 
 # Test the function
-# print(can_partition([1, 5, 6]))  # Output: True (1 + 5 = 6)
+print(can_partition([1, 5, 6]))  # Output: True (1 + 5 = 6)
 
 
 # Solution

@@ -29,7 +29,7 @@ def max_sum_k_consecutive(arr, k):
     return max_sum
 
 # Test the function
-# print(max_sum_k_consecutive([1, 2, 3, 4], 2))  # Output: 7 (3 + 4)
+print(max_sum_k_consecutive([1, 2, 3, 4], 2))  # Output: 7 (3 + 4)
 
 
 # Solution
@@ -77,7 +77,7 @@ def count_subarrays_with_sum(arr, k):
     return count
 
 # Test the function
-# print(count_subarrays_with_sum([1, 2, 3], 3))  # Output: 2 ([1, 2], [3])
+print(count_subarrays_with_sum([1, 2, 3], 3))  # Output: 2 ([1, 2], [3])
 
 
 # Solution

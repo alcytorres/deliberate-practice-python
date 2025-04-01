@@ -300,13 +300,8 @@ strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
 result = ""
 
 i1 = 0
-while i1 < len(strings):
-    pair = strings[i1]
-    i2 = 0
-    while i2 < len(pair):
-        result += pair[i2]
-        i2 += 1
-    i1 += 1
+
+
 
 # print(result)
 
