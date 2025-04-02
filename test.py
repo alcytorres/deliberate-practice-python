@@ -168,3 +168,5 @@ def merge_sorted_arrays(arr1, arr2):   # Define the function that takes two arra
 
 # Test the function
 print(merge_sorted_arrays([1, 3], [2, 4]))  # Output: [1, 2, 3, 4]
+
+
