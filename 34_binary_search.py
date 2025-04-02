@@ -164,7 +164,7 @@ def find_last_occurrence(arr, target):   # Define the function that takes a sort
 # ----------------------------------------------------------------------------------
 # 4. Next Greater Element
 """
-Task: Find the smallest element greater than the target.
+Task: Find the smallest element greater than the target in a sorted array, or return None if no such element exists.
 Example: [1, 3, 5], target 2 → 3
 Why: Prepares for real-world binary search tweaks.
 """
@@ -210,7 +210,7 @@ def next_greater_element(arr, target):   # Define the function that takes a sort
 # ----------------------------------------------------------------------------------
 # 5. Square Root Estimation
 """
-Task: Find the integer square root of a number using binary search.
+Task: Find the largest integer whose square is less than or equal to a number using binary search.
 Example: 16 → 4
 Why: Applies binary search to a different domain."
 """

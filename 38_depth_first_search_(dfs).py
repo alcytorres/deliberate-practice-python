@@ -11,7 +11,7 @@ Potential Knowledge Gaps
 # ----------------------------------------------------------------------------------
 # 1. Preorder Traversal
 """
-Task: Print nodes in preorder (root, left, right).
+Task: Return a list of node values in preorder (root, left, right).
 Example: [1, 2, 3] → [1, 2, 3]
 Why: Basic recursive DFS practice.
 """

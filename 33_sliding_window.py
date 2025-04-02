@@ -57,7 +57,7 @@ def max_sum_k_consecutive(arr, k):   # Define the function that takes an array '
 # ----------------------------------------------------------------------------------
 # 2. Count Subarrays with Sum K
 """
-Count Subarrays with Sum K
+Count the number of contiguous subarrays that sum to a given value k.
 Task: Count subarrays with a given sum.
 Example: [1, 2, 3], k=3 → 2 ([1, 2], [3])
 Why: Practices maintaining a window with a condition.
@@ -108,7 +108,7 @@ def count_subarrays_with_sum(arr, k):   # Define the function that takes an arra
 # ----------------------------------------------------------------------------------
 # 3. Longest Substring with At Most K Vowels
 """
-Task: Find the longest substring with at most k vowels.
+Task: Find the length of the longest substring with at most k vowels.
 Example: "aeiou", k=2 → "ae"
 Why: Introduces dynamic window adjustments.
 """
@@ -171,8 +171,7 @@ Why: Builds toward variable-size window problems.
 # ----------------------------------------------------------------------------------
 # 5. Average of Sliding Window
 """
-Average of Sliding Window
-Task: Compute the average of all subarrays of size k.
+Task: Compute the list of averages for all contiguous subarrays of size k.
 Example: [1, 2, 3, 4], k=2 → [1.5, 2.5, 3.5]
 Why: Directly supports Maximum Average Subarray I.
 """

@@ -26,7 +26,7 @@ def prefix_sum(arr):
     return result
 
 # Test the function
-# print(prefix_sum([1, 2, 3]))  # Output: [1, 3, 6]
+# print(prefix_sum([1, 2, 3]))  # Output: [1, 1+2=3, 1+2+3=6)]
 
 
 # Solution
@@ -52,7 +52,7 @@ def prefix_sum(arr):   # Define the function that takes an array 'arr' as input
 # ----------------------------------------------------------------------------------
 # 2. Range Sum Query
 """
-Task: Find the sum of elements between two indices using prefix sums.
+Task: Find the sum of elements between two indices (inclusive) using prefix sums.
 Example: [1, 2, 3], indices 0 to 1 → 3 (1 + 2)
 Why: Teaches efficient range sum calculation.
 """
@@ -64,7 +64,7 @@ def range_sum(prefix, start, end):
 
 # Test the function
 prefix = prefix_sum([1, 2, 3])
-# print(range_sum(prefix, 0, 1))  # Output: 3 (1 + 2)
+# print(range_sum(prefix, 0, 1))  # Output: 3 (1 + 2) 
 
 
 # Solution
@@ -178,7 +178,7 @@ def max_subarray_sum(arr, k):  # Define the function that takes an array 'arr' a
 # ----------------------------------------------------------------------------------
 # 5. Partition Array into Equal Sums
 """
-Task: Check if an array can be split into two parts with equal sums.
+Task: Check if an array can be split into two non-empty contiguous parts with equal sums.
 Example: [1, 5, 6] → True (1 + 5 = 6)
 Why: Reinforces cumulative sum usage.
 """

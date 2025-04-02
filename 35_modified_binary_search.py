@@ -11,7 +11,7 @@ Potential Knowledge Gaps
 # ----------------------------------------------------------------------------------
 # 1. Search in Rotated Sorted Array (Simple)
 """
-Task: Find a target in a rotated sorted array.
+Task: Find a target in a rotated sorted array (e.g., a sorted array shifted circularly).
 Example: [4, 5, 1, 2, 3], target 2 → 3
 Why: Introduces rotation concepts.
 """
@@ -159,7 +159,7 @@ def find_peak_element(arr):   # Define the function that takes an array 'arr'
 # ----------------------------------------------------------------------------------
 # 4. Count Rotations
 """
-Task: Determine how many times a sorted array was rotated.
+Task: Find how many positions the smallest element of a sorted array has shifted from the start due to rotation.
 Example: [3, 4, 5, 1, 2] → 3
 Why: Builds intuition for modified conditions.
 """
@@ -203,7 +203,7 @@ def count_rotations(arr):   # Define the function that takes a rotated sorted ar
 # ----------------------------------------------------------------------------------
 # 5. Binary Search on Reverse Sorted Array
 """
-Task: Adapt binary search for a descending sorted array.
+Task: Modify binary search to find a target in a descending sorted array.
 Example: [5, 4, 3, 2, 1], target 3 → 2
 Why: Encourages flexibility in binary search logic.
 """

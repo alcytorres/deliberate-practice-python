@@ -82,8 +82,8 @@ root = TreeNode(1, TreeNode(2), TreeNode(3))
 # ----------------------------------------------------------------------------------
 # 2. Count Nodes at Level K
 """
-Task: Count nodes at a given level in a tree.
-Example: [1, 2, 3], k=1 → 2 (2, 3)
+Task: Count nodes at a given level in a tree (root is level 0).
+Example: [1, 2, 3], k=1 → 2 (nodes 2 and 3 at level 1).
 Why: Reinforces level tracking."
 """
 
@@ -146,7 +146,8 @@ root = TreeNode(1, TreeNode(2), TreeNode(3))
 # ----------------------------------------------------------------------------------
 # 3. Shortest Path in Grid
 """
-Task: Find the shortest path from top-left to bottom-right in a 3x3 grid.
+Task: Find the shortest path from top-left to bottom-right in a 3x3 grid. 
+      1s are paths, 0s are obstacles.
 Example: [[1, 1, 1], [1, 0, 1], [1, 1, 1]] → 4
 Why: Applies BFS to a simple graph.
 """
@@ -278,6 +279,7 @@ root = TreeNode(1, TreeNode(2, TreeNode(4)), TreeNode(3))
 """
 Task: Find the distance from root to the nearest leaf.
 Example: [1, 2, null, 3] → 2
+         Tree with root 1, left child 2, and 2’s left child 3 → 2 (distance to leaf 2).
 Why: Prepares for depth-related problems."
 """
 

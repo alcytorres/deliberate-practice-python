@@ -107,8 +107,8 @@ def permute_string(s):   # Define the function that takes a string 's' as input
 # ----------------------------------------------------------------------------------
 # 3. Combination Sum (Simple)
 """
-Task: Find combinations of numbers summing to a target.
-Example: [1, 2], target 3 → [[1, 2]]
+Task: Find all unique combinations of numbers from the array that sum to the target, allowing reuse of elements.
+Example: [1, 2], target 4 → [[1, 1, 1, 1], [1, 1, 2], [2, 2]]
 Why: Teaches state management.
 """
 
@@ -128,7 +128,7 @@ def combination_sum(arr, target):
     return result
 
 # Test the function
-# print(combination_sum([1, 2], 3))  # Output: [[1, 2]]
+# print(combination_sum([1, 2], 4))  # Output: [[1, 1, 1, 1], [1, 1, 2], [2, 2]]
 
 
 # Solution
@@ -155,14 +155,15 @@ def combination_sum(arr, target):   # Define the function with array 'arr' and '
     return result         # Return the list of all valid combinations
 
 # Test the function
-# print(combination_sum([1, 2], 3))  # Output: [[1, 2]]
+# print(combination_sum([1, 2], 4))  # Output: [[1, 1, 1, 1], [1, 1, 2], [2, 2]]
 
 
 # ----------------------------------------------------------------------------------
 # 4. Solve 3x3 Maze
 """
-Task: Find a path from start to end in a 3x3 grid.
-Example: [[1, 0, 1], [1, 1, 1], [0, 1, 1]] → Path exists
+Task: Find a path from the top-left to the bottom-right corner in a 3x3 grid, where 1 represents a path and 0 represents an obstacle. 
+      Return the path as a list of coordinates if it exists, otherwise return None.
+Example: [[1, 0, 1], [1, 1, 1], [0, 1, 1]] → Path exists → [(0, 0), (1, 0), (1, 1), (1, 2), (2, 2)]
 Why: Applies backtracking to grids.
 """
 
@@ -221,8 +222,9 @@ grid = [[1, 0, 1], [1, 1, 1], [0, 1, 1]]
 # ----------------------------------------------------------------------------------
 # 5. N-Queens (Small N)
 """
-Task: Place 4 queens on a 4x4 board so none attack each other.
-Example: Output a valid configuration
+Task: Place 4 queens on a 4x4 chessboard such that no two queens threaten each other. 
+      Return all valid configurations as lists, where each list represents the column positions of queens in each row.
+Example: [[1, 3, 0, 2], [2, 0, 3, 1]]
 Why: Classic backtracking problem.
 """
 

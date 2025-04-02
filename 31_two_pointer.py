@@ -144,7 +144,7 @@ def reverse_array(arr):   # Define the function that takes an array 'arr' as inp
 # ----------------------------------------------------------------------------------
 # 4. Find Pair with Target Difference
 """
-Task: Find two numbers in an array whose difference is a given target.
+Task: Find two numbers in an array whose difference is a given target. The larger number minus the smaller should equal the target.
 Example: [1, 3, 5, 8], target = 2 → [1, 3]
 Why: Prepares for Two Sum by practicing pointer movement for a condition.
 """

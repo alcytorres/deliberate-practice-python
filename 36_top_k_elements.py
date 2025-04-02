@@ -183,7 +183,7 @@ def k_smallest_elements(arr, k):   # Define the function that takes an array 'ar
 # ----------------------------------------------------------------------------------
 # 5. Merge K Sorted Lists (Simple)
 """
-Task: Merge k sorted lists of size 2 into one sorted list.
+Task: Merge k lists, where each list has exactly 2 numbers and is already sorted, into one fully sorted list.
 Example: [[1, 3], [2, 4]] → [1, 2, 3, 4]
 Why: Introduces multi-list handling."
 """
