@@ -37,6 +37,10 @@ def sum_first_last(arr):   # Define the function that takes an array 'arr' as in
 # Test the function
 print(sum_first_last([1, 2, 3]))  # Output: 4 (1 + 3)
 
+# Test cases:
+print(sum_first_last([5]))        # Output: 10 (5 + 5)
+print(sum_first_last([]))         # Output: 0 (0 + 0)
+print(sum_first_last([1, 2]))     # Output: 3 (1 + 2)
 
 # ----------------------------------------------------------------------------------
 # 2. Check if Array is Sorted
@@ -103,7 +107,7 @@ print(reverse_array([1, 2, 3]))  # Output: [3, 2, 1]
 # ----------------------------------------------------------------------------------
 # 4. Find Pair with Target Difference
 """
-Task: Find two numbers in an array whose difference is a given target.
+Task: Find two numbers in an array whose difference is a given target. The larger number minus the smaller should equal the target.
 Example: [1, 3, 5, 8], target = 2 → [1, 3]
 Why: Prepares for Two Sum by practicing pointer movement for a condition.
 """
