@@ -94,8 +94,9 @@ items = { "chair": 100, "book": 14 }
 #       [["chair", 100], ["book", 14]]
 result = []
 
-
-# print(result)
+for key in items:
+    result.append([key, items[key]])
+print(result)
 
 
 
