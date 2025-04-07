@@ -165,6 +165,9 @@ def find_pair_with_difference(arr, target):
     return None       
 
 # print(find_pair_with_difference([1, 3, 5, 8], 2))  # Output: [1, 3]
+# print(find_pair_with_difference([8, 1, 3, 5], 3))  # Output: [5, 8]
+# print(find_pair_with_difference([1, 2, 4], 5))  # Output: None
+# print(find_pair_with_difference([1, 5, 6], 2))  # Output: None
 
 
 # Solution
@@ -192,6 +195,9 @@ def find_pair_with_difference(arr, target):   # Define the function that takes a
 
 # Test the function
 # print(find_pair_with_difference([1, 3, 5, 8], 2))  # Output: [1, 3]
+# print(find_pair_with_difference([8, 1, 3, 5], 3))  # Output: [5, 8]
+# print(find_pair_with_difference([1, 2, 4], 5))  # Output: None
+# print(find_pair_with_difference([1, 5, 6], 2))  # Output: None
 
 
 # ----------------------------------------------------------------------------------
@@ -244,5 +250,6 @@ def merge_sorted_arrays(arr1, arr2):   # Define the function that takes two arra
 
 # Test the function
 # print(merge_sorted_arrays([1, 3], [2, 4]))  # Output: [1, 2, 3, 4]
-
+# print(find_pair_with_difference([8, 1, 3, 5], 3))  # Output: [5, 8]
+# print(find_pair_with_difference([1, 2, 4], 5))  # Output: None
 
