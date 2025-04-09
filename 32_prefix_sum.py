@@ -65,7 +65,7 @@ def range_sum(prefix, start, end):
 # Test the function
 prefix = prefix_sum([1, 2, 3])
 # print(range_sum(prefix, 0, 1))  # Output: 3 (1 + 2) 
-
+# print (range_sum(prefix, 1, 2)) # Output: 5 (6 - 1)
 
 # Solution
 def range_sum(prefix, start, end):   # Define the function that takes a prefix sum array and two indices
@@ -83,6 +83,7 @@ def range_sum(prefix, start, end):   # Define the function that takes a prefix s
 # Test the function
 prefix = prefix_sum([1, 2, 3])
 # print(range_sum(prefix, 0, 1))  # Output: 3 (1 + 2)
+# print (range_sum(prefix, 1, 2)) # Output: 5 (6 - 1)
 
 
 # ----------------------------------------------------------------------------------
