@@ -223,6 +223,7 @@ def merge_sorted_arrays(arr1, arr2):
     return result       
 
 # print(merge_sorted_arrays([1, 3], [2, 4]))  # Output: [1, 2, 3, 4]
+# print(merge_sorted_arrays([1, 3], [2, 4, 6]))  # Output: [1, 2, 3, 4, 6]
 
 
 # Solution
@@ -250,6 +251,5 @@ def merge_sorted_arrays(arr1, arr2):   # Define the function that takes two arra
 
 # Test the function
 # print(merge_sorted_arrays([1, 3], [2, 4]))  # Output: [1, 2, 3, 4]
-# print(find_pair_with_difference([8, 1, 3, 5], 3))  # Output: [5, 8]
-# print(find_pair_with_difference([1, 2, 4], 5))  # Output: None
+# print(merge_sorted_arrays([1, 3], [2, 4, 6]))  # Output: [1, 2, 3, 4, 6]
 

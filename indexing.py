@@ -82,7 +82,7 @@ text = "Python"
 # From second-to-last to last
 print(text[-2:])   # Output: on
 
-# From start to second-to-last  ???????
+# From start to second-to-last  ??? Exclusive
 print(text[:-2])   # Output: Pyth
 
 # From third-to-last to second-to-last
@@ -97,8 +97,8 @@ print(text[-3:-1]) # Output: ho
 text = "Python"
 
 # Every second character
-print(text[0:6:2])  # Output: Pto (P, t, n)
-print(text[::2])    # Output: Pto (P, t, n)
+print(text[0:6:2])  # Output: Pto 
+print(text[::2])    # Output: Pto 
 
 # Reverse the string
 print(text[::-1])   # Output: nohtyP
@@ -142,7 +142,7 @@ print(sentence[7:13])  # Output: Python
 # Out-of-Range Indices
 # - Indexing: Raises an IndexError.
 text = "Python"
-# print(text[10])  # Uncommenting this would raise: IndexError: string index out of range
+print(text[10])  # Uncommenting this would raise: IndexError: string index out of range
 
 # - Slicing: Returns an empty sequence if the range is invalid, no error.
 print(text[10:15])  # Output: "" (empty string)
@@ -153,7 +153,7 @@ print(text[3:3])  # Output: "" (start equals stop)
 
 # Step of Zero
 # A step of 0 is invalid:
-# print(text[::0])  # Uncommenting this would raise: ValueError: slice step cannot be zero
+print(text[::0])  # Uncommenting this would raise: ValueError: slice step cannot be zero
 
 # --- 5. Practice Problems ---
 # Try these to test your understanding:
