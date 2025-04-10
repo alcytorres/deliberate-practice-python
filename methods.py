@@ -58,6 +58,17 @@ dict.keys()  # Returns a view of the dictionary’s keys
 ages = {"Alice": 25, "Bob": 30}
 print(list(ages.keys()))  # Output: ["Alice", "Bob"]
 
+# SET METHODS
+.add()
+# What it does: Adds a single element to a set if it’s not already present.
+# Why use it: Building a collection of unique items efficiently.
+# Syntax:
+set.add(element)  # Modifies the set in place, adding 'element'
+# Example:
+unique = {1, 2}
+unique.add(3)
+print(unique)  # Output: {1, 2, 3}
+
 # BUILT-IN FUNCTIONS
 len()
 # What it does: Returns the length (number of items) of an object (list, string, etc.).
@@ -103,6 +114,15 @@ range(start, stop)  # Returns a range object; 'start' is inclusive, 'stop' is ex
 # Example:
 print(list(range(1, 4)))  # Output: [1, 2, 3]
 
+set()
+# What it does: Creates a set from an iterable or an empty set, storing unique elements.
+# Why use it: Removing duplicates or performing set operations (e.g., union, intersection).
+# Syntax:
+set(iterable)  # Returns a new set; 'iterable' is optional
+# Example:
+nums = [1, 2, 2, 3]
+print(set(nums))  # Output: {1, 2, 3}
+
 # ADDITIONAL COMMON METHODS/FUNCTIONS FOR LEETCODE
 # LIST METHOD
 .sort()
@@ -124,3 +144,7 @@ max(iterable)  # Returns the maximum value; can also compare multiple arguments
 # Example:
 numbers = [1, 5, 3]
 print(max(numbers))  # Output: 5
+
+
+
+

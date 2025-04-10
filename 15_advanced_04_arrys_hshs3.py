@@ -13,6 +13,7 @@ result = {}
 # print(result)
 
 
+
 # Solution 
 nums = [[1, 3], [8, 9], [2, 16]]
 #         {1 => 3, 8 => 9, 2 => 16}
@@ -25,6 +26,19 @@ while i < len(nums):
     result[key] = value
     i += 1
 
+# print(result)
+
+
+# Solution with for loop
+nums = [[1, 3], [8, 9], [2, 16]]
+#         {1 => 3, 8 => 9, 2 => 16}
+result = {}
+
+for pair in nums:
+    key = pair[0]
+    value = pair[1]
+    result[key] = value
+    
 # print(result)
 
 
@@ -94,9 +108,8 @@ items = { "chair": 100, "book": 14 }
 #       [["chair", 100], ["book", 14]]
 result = []
 
-for key in items:
-    result.append([key, items[key]])
-print(result)
+
+# print(result)
 
 
 
@@ -141,7 +154,6 @@ for key in items:                     # Loop over each key in the dictionary
 persons = { 321: { "name": "Alice", "age": 31 }, 322: { "name": "Maria", "age": 27 } }
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
 result = []
-
 
 
 # print(result)
@@ -192,6 +204,19 @@ while i < len(words):                     # Loop through all words in the list
     i += 1                                # Move to the next word
 
 # print(result)                             # Print the final word counts
+
+
+# Solution with for loop
+words = ["do", "or", "do", "not"]
+#       {"do" => 2, "or" => 1, "not" => 1}
+result = {}
+
+for word in words:      # Loop through each word directly
+    if word not in result:   # If we haven’t seen this word yet
+        result[word] = 0     # Start its count at 0
+    result[word] += 1        # Add 1 to its count
+
+# print(result)  # Output: {'do': 2, 'or': 1, 'not': 1}
 
 
 
@@ -261,7 +286,6 @@ while i < len(items):
 books = [{ "author": "Jeff Smith", "title": "Bone" }, { "author": "George Orwell", "title": "1984" }, { "author": "Jeff Smith", "title": "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 result = {}
-
 
 
 # print(result)

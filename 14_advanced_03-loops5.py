@@ -160,6 +160,17 @@ while i1 < len(nums):
 # print(total)
 
 
+# Solution with for loop
+nums = [[1, 3], [8, 9], [2, 16]]
+total = 0
+
+for pair in nums:         # Loops over pairs: [1, 3], [8, 9], [2, 16]
+    for num in pair:      # Loops over numbers in pair: 1, 3, then 8, 9, then 2, 16
+        total += num      # Adds each number individually
+
+# print(total)  # Output: 39
+
+
 # 6. Use a nested loop with two arrays of numbers to create a new array of the sums of each combination of numbers.
 #    For example, [1, 2] and [6, 7, 8] becomes [7, 8, 9, 8, 9, 10].
 
@@ -258,7 +269,7 @@ while i1 < len(nums):
 
 # DO THIS PROBLEM
 
-# 9. Use nested loops with an array of numbers to compute a new array containing the first two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
+# 9. Use nested loops with an array of numbers to compute a new array containing the first two different numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
 #    For example, [2, 5, 3, 1, 0, 7, 11] becomes [3, 7].
 
 nums = [2, 5, 3, 1, 0, 7, 11]
@@ -302,8 +313,8 @@ result = ""
 i1 = 0
 
 
-
 # print(result)
+
 
 
 # Solution

@@ -26,7 +26,7 @@ def prefix_sum(arr):
     return result
 
 # Test the function
-# print(prefix_sum([1, 2, 3]))  # Output: [1, 1+2=3, 1+2+3=6)]
+# print(prefix_sum([1, 2, 3]))  # Output: [1, 3, 6)]  →  [1, 1+2=3, 1+2+3=6)]
 
 
 # Solution
@@ -46,7 +46,7 @@ def prefix_sum(arr):   # Define the function that takes an array 'arr' as input
     return result       # Return the prefix sum array
 
 # Test the function
-# print(prefix_sum([1, 2, 3]))  # Output: [1, 1+2=3, 1+2+3=6)]
+# print(prefix_sum([1, 2, 3]))  # Output: [1, 3, 6)]  →  [1, 1+2=3, 1+2+3=6)]
 
 
 # ----------------------------------------------------------------------------------
@@ -107,6 +107,9 @@ def has_zero_sum_subarray(arr):
 # Test the function
 # print(has_zero_sum_subarray([4, -4, 1]))  # Output: True (4 + -4 = 0)
 
+# Test the function
+# Add this: print(seen) to see seen after each addition below this line: seen.add(prefix_sum)
+
 
 # Solution
 def has_zero_sum_subarray(arr):    # Define the function that takes an array 'arr' as input
@@ -129,6 +132,12 @@ def has_zero_sum_subarray(arr):    # Define the function that takes an array 'ar
 # Test the function
 # print(has_zero_sum_subarray([4, -4, 1]))  # Output: True (4 + -4 = 0)
 
+"""
+Explnation: 
+Imagine you’re adding numbers in a list, step-by-step, and you’re looking for a trick: if at any point your total either hits 0 or matches a total you’ve seen before, you’ve found a chunk of numbers that adds up to 0. That’s what this code does.
+
+The code checks if there’s a piece of the list [4, -4, 1] that adds to 0 (like 4 + -4 = 0). It keeps a running total and uses a “memory box” to remember totals it’s seen. If the total ever becomes 0 or repeats a number from the box, it says “Yes!” (True). If not, it says “No!” (False).
+"""
 
 
 # ----------------------------------------------------------------------------------
