@@ -17,6 +17,24 @@ string.lower()  # Returns a new string with all lowercase letters
 text = "WORLD"
 print(text.lower())  # Output: "world"
 
+.replace()
+# What it does: Replaces all occurrences of a substring with another substring.
+# Why use it: Modifying specific parts of a string (e.g., updating text).
+# Syntax:
+string.replace(old, new)  # Returns a new string with 'old' replaced by 'new'
+# Example:
+text = "hello world"
+print(text.replace("world", "python"))  # Output: "hello python"
+
+.isdigit()
+# What it does: Checks if all characters in a string are digits.
+# Why use it: Validating numeric input (e.g., for parsing numbers).
+# Syntax:
+string.isdigit()  # Returns True if all characters are digits, else False
+# Example:
+text = "123"
+print(text.isdigit())  # Output: True
+
 # LIST METHODS
 .append()
 # What it does: Adds a single element to the end of a list.
@@ -36,6 +54,16 @@ list.extend(iterable)  # Modifies the list in place, adding all items from 'iter
 # Example:
 numbers = [1, 2]
 numbers.extend([3, 4])
+print(numbers)  # Output: [1, 2, 3, 4]
+
+.insert()
+# What it does: Inserts an element at a specified index in a list.
+# Why use it: Adding an item at a specific position without overwriting.
+# Syntax:
+list.insert(index, item)  # Modifies the list in place, inserting 'item' at 'index'
+# Example:
+numbers = [1, 2, 4]
+numbers.insert(2, 3)
 print(numbers)  # Output: [1, 2, 3, 4]
 
 .pop()
@@ -68,6 +96,7 @@ set.add(element)  # Modifies the set in place, adding 'element'
 unique = {1, 2}
 unique.add(3)
 print(unique)  # Output: {1, 2, 3}
+
 
 # BUILT-IN FUNCTIONS
 len()
@@ -144,7 +173,3 @@ max(iterable)  # Returns the maximum value; can also compare multiple arguments
 # Example:
 numbers = [1, 5, 3]
 print(max(numbers))  # Output: 5
-
-
-
-

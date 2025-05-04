@@ -173,7 +173,7 @@ def max_subarray_sum(arr, k):  # Define the function that takes an array 'arr' a
     """
     if len(arr) < k:      # If array is shorter than 'k'
         return None       # Cannot form a subarray of size 'k'
-    prefix = prefix_sum(arr)      # Compute prefix sum array
+    prefix = prefix_sum(arr)      # Compute prefix sum array   [1, 2, 3, 4] → [1, 3, 6, 10)] 
     max_sum = prefix[k - 1]       # Sum of the first k elements
     for i in range(k, len(arr)):  # Slide the window from k to the end
         current_sum = prefix[i] - prefix[i - k]  # Calculate sum of current window

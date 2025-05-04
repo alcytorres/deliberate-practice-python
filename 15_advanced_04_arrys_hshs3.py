@@ -124,7 +124,7 @@ for key in items:                     # Loop over each key in the dictionary
 
 
 # IMPORTANT
-# for name items: Grabs each key ("chair", then "book") directly from the dictionary. 
+# for name in items: Grabs each key ("chair", then "book") directly from the dictionary. 
 # ****** In Python, looping over a dictionary gives you its keys. ******
 
 
@@ -167,7 +167,7 @@ result = []
 # Solution
 persons = { 321: { "name": "Alice", "age": 31 }, 322: { "name": "Maria", "age": 27 } }  # Dictionary with IDs as keys, person info as values
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
-result = []                         # Empty list to store the new dictionaries
+result = []                    # Empty list to store the new dictionaries
 
 for id in persons:             # Loop over each key (ID) in the dictionary
     person = persons[id]       # Get the inner dictionary for the current ID
