@@ -27,7 +27,7 @@ while i1 < len(num_pairs):
         i2 += 1
     i1 += 1
 
-print(result)
+# print(result)
 
 
 # 2. Use a nested loop with two arrays of strings to create a new array of strings with each string combined.
@@ -138,7 +138,7 @@ total = 0
 i1 = 0
 
     
-# print(total)
+print(total)
 
 
 
